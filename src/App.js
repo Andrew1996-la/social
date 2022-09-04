@@ -1,6 +1,6 @@
 import Header from './components/Header'
 import Navigation from './components/Navigation'
-import Main from './components/Main'
+import Profile from './components/Profile'
 import React from 'react'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
         <div className="grid grid-cols-[2fr,_10fr] grid-rows-[120px,_100%]">
             <Header />
             <Navigation />
-            <Main />
+            <Profile />
         </div>
     )
 }

@@ -19,8 +19,8 @@ module.exports = {
         },
         extend: {
             gridTemplateRows: {
-                rowsMainSection:
-                    '250px, minmax(500px, max-content), repeat(2, minmax(min-content, max-content))',
+                rowsProfileSection:
+                    '250px, minmax(500px, max-content), repeat(auto-fill, minmax(min-content, max-content))',
             },
         },
     },

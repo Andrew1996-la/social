@@ -4,19 +4,22 @@ import ProfilePhoto from './ProfilePhoto'
 import ProfileInfo from './ProfileInfo'
 import ProfileInput from './ProfileInput'
 import ProfilePost from './ProfilePost'
+import MESSAGES from '../data/messages'
 
-class Main extends Component {
+class Profile extends Component {
     render() {
         return (
-            <section className="bg-mainGreen grid grid-rows-rowsMainSection grid-cols-[3.5fr,_8fr] ">
+            <section className="bg-mainGreen grid grid-rows-rowsProfileSection grid-cols-[3.5fr,_8fr] ">
                 <ProfileBG />
                 <ProfilePhoto />
                 <ProfileInfo />
                 <ProfileInput />
-                <ProfilePost />
+                {MESSAGES.map((post) => {
+                    return <ProfilePost key={post.id} message={post.message} />
+                })}
             </section>
         )
     }
 }
 
-export default Main
+export default Profile
