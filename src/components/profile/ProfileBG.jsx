@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import bgImg from '../img/bg_img.jpg'
+import bgImg from '../../img/bg_img.jpg'
 
 class ProfileBg extends Component {
     render() {

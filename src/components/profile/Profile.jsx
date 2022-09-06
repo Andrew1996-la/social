@@ -4,7 +4,7 @@ import ProfilePhoto from './ProfilePhoto'
 import ProfileInfo from './ProfileInfo'
 import ProfileInput from './ProfileInput'
 import ProfilePost from './ProfilePost'
-import MESSAGES from '../data/messages'
+import MESSAGES from '../../data/messages'
 
 class Profile extends Component {
     render() {
@@ -15,7 +15,13 @@ class Profile extends Component {
                 <ProfileInfo />
                 <ProfileInput />
                 {MESSAGES.map((post) => {
-                    return <ProfilePost key={post.id} message={post.message} />
+                    return (
+                        <ProfilePost
+                            key={post.id}
+                            message={post.message}
+                            likes={post.likes}
+                        />
+                    )
                 })}
             </section>
         )
