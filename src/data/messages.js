@@ -1,4 +1,4 @@
-const MESSAGES = [
+const messages = [
     {
         id: 1,
         message: 'post 1 here',
@@ -21,4 +21,4 @@ const MESSAGES = [
     },
 ]
 
-export default MESSAGES
+export default messages

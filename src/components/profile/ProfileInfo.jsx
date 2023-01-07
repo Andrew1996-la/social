@@ -23,12 +23,6 @@ class ProfileInfo extends Component {
                     reprehenderit rerum suscipit temporibus totam velit veniam
                     vero voluptates! Assumenda distinctio, doloribus facilis
                     ipsum recusandae repellendus vero. Adipisci autem cupiditate
-                    dolorem dolorum eaque excepturi hic ipsum iusto libero minus
-                    molestias nemo pariatur quisquam sunt tempore, vero
-                    voluptates. A ab aperiam dolorem eius fugiat hic laudantium,
-                    nihil, non pariatur perferendis qui ut. Accusamus
-                    accusantium aliquid amet aut doloribus, fugit id illum
-                    impedit itaque praesentium quas quasi quidem quod sit.
                 </p>
             </div>
         )
