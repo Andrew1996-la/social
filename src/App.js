@@ -9,8 +9,8 @@ function App() {
         <div className="grid grid-cols-[2fr,_10fr] grid-rows-[120px,_100%]">
             <Header />
             <Navigation />
-            {/*<Profile />*/}
-            <Dialogs />
+            <Profile />
+            {/*<Dialogs />*/}
         </div>
     )
 }
