@@ -8,11 +8,11 @@ class ProfilePost extends Component {
             <>
                 {messages.map((messages) => {
                     return (
-                        <div className="col-span-2 w-[84%] px-2 mt-7 relative">
-                            <div
-                                className="font-josefin text-lightGray text-l font-light"
-                                key={messages.id}
-                            >
+                        <div
+                            className="col-span-2 w-[84%] px-2 mt-7 relative"
+                            key={messages.id}
+                        >
+                            <div className="font-josefin text-lightGray text-l font-light">
                                 {messages.message}
                             </div>
                             <LikePost count={messages.likes} />
