@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import navigationMenuLinks from '../data/navigationMenuLinks'
+import navigationMenuLinks from '../../data/navigationMenuLinks'
+
+import { Link } from 'react-router-dom'
 
 class Navigation extends Component {
     render() {
         return (
-            <nav className="bg-darkGreen flex justify-center items-center">
+            <nav className="bg-darkGreen flex justify-center items-center h-100%">
                 <ul>
                     {navigationMenuLinks.map((link) => {
                         return (
@@ -12,7 +14,7 @@ class Navigation extends Component {
                                 className="text-l font-aboreto text-mainGreen"
                                 key={link.id}
                             >
-                                <a href={link.link}>{link.linkName}</a>
+                                <Link to={link.link}>{link.linkName}</Link>
                             </li>
                         )
                     })}

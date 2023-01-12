@@ -1,27 +1,27 @@
 const navigationMenuLinks = [
     {
         id: 0,
-        link: '#',
+        link: '/',
         linkName: 'Profile',
     },
     {
         id: 1,
-        link: '#',
+        link: '/message',
         linkName: 'Message',
     },
     {
         id: 2,
-        link: '#',
+        link: '/new',
         linkName: 'New',
     },
     {
         id: 3,
-        link: '#',
+        link: '/music',
         linkName: 'Music',
     },
     {
         id: 4,
-        link: '#',
+        link: '/settings',
         linkName: 'Settings',
     },
 ]
