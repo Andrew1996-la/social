@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import navigationMenuLinks from '../../data/navigationMenuLinks'
 
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 class Navigation extends Component {
     render() {
+        const activeStyle = {
+            color: '#ECEBE5',
+        }
+
         return (
             <nav className="bg-darkGreen flex justify-center items-center h-100%">
                 <ul>
@@ -14,7 +18,14 @@ class Navigation extends Component {
                                 className="text-l font-aboreto text-mainGreen"
                                 key={link.id}
                             >
-                                <Link to={link.link}>{link.linkName}</Link>
+                                <NavLink
+                                    style={({ isActive }) =>
+                                        isActive ? activeStyle : undefined
+                                    }
+                                    to={link.link}
+                                >
+                                    {link.linkName}
+                                </NavLink>
                             </li>
                         )
                     })}
