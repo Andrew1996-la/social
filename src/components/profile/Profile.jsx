@@ -8,7 +8,7 @@ import ProfilePost from './ProfilePost'
 class Profile extends Component {
     render() {
         return (
-            <section className="grid grid-rows-rowsProfileSection grid-cols-[3.5fr,_8fr] ">
+            <section className="grid grid-cols-[2fr,_10fr]">
                 <ProfileBG />
                 <ProfilePhoto />
                 <ProfileInfo />

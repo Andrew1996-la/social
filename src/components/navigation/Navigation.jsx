@@ -10,7 +10,7 @@ class Navigation extends Component {
         }
 
         return (
-            <nav className="bg-darkGreen flex justify-center items-center h-100%">
+            <nav className="bg-darkGreen flex justify-center items-center h-[100%]">
                 <ul>
                     {navigationMenuLinks.map((link) => {
                         return (
