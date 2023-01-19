@@ -12,7 +12,7 @@ class Dialogs extends Component {
                         <ul className="text-s font-josefin text-lightGray">
                             {dialogsName.map((dialogName) => {
                                 return (
-                                    <li key={dialogName.id}>
+                                    <li className="pt-4" key={dialogName.id}>
                                         {dialogName.name}
                                     </li>
                                 )
@@ -23,7 +23,10 @@ class Dialogs extends Component {
                         <ul className="text-s font-josefin text-lightGray">
                             {conversation.map((conversationItem) => {
                                 return (
-                                    <li key={conversationItem.id}>
+                                    <li
+                                        className="pt-4"
+                                        key={conversationItem.id}
+                                    >
                                         {conversationItem.message}
                                     </li>
                                 )
