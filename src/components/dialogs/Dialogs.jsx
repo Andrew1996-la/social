@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import dialogsName from '../../data/dialogsName'
 import conversation from '../../data/conversation'
+import ConversationItem from './ConversationItem'
+import img from '../../img/girlAvatar.jpg'
 
 class Dialogs extends Component {
     render() {
@@ -23,12 +25,11 @@ class Dialogs extends Component {
                         <ul className="text-s font-josefin text-lightGray">
                             {conversation.map((conversationItem) => {
                                 return (
-                                    <li
-                                        className="pt-4"
+                                    <ConversationItem
                                         key={conversationItem.id}
-                                    >
-                                        {conversationItem.message}
-                                    </li>
+                                        message={conversationItem.message}
+                                        imgUrl={img}
+                                    />
                                 )
                             })}
                         </ul>
