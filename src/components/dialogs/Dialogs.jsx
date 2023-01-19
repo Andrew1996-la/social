@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+import dialogsName from '../../data/dialogsName'
+import conversation from '../../data/conversation'
+
 class Dialogs extends Component {
     render() {
         return (
@@ -7,16 +10,24 @@ class Dialogs extends Component {
                 <section className="h-[calc(100vh-240px)] grid grid-cols-[2fr,_10fr] pt-[20px]">
                     <div className="grid justify-center border-r-2 border-lightGray h-[100%]">
                         <ul className="text-s font-josefin text-lightGray">
-                            <li>Katya</li>
-                            <li>Irina</li>
-                            <li>Maria</li>
+                            {dialogsName.map((dialogName) => {
+                                return (
+                                    <li key={dialogName.id}>
+                                        {dialogName.name}
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </div>
                     <div className="pl-8">
                         <ul className="text-s font-josefin text-lightGray">
-                            <li>His how are you?</li>
-                            <li>What is your life?</li>
-                            <li>Are you genius</li>
+                            {conversation.map((conversationItem) => {
+                                return (
+                                    <li key={conversationItem.id}>
+                                        {conversationItem.message}
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </div>
                 </section>
