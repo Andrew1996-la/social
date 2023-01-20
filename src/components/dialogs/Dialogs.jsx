@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 
-import dialogsName from '../../data/dialogsName'
-import conversation from '../../data/conversation'
 import ConversationItem from './ConversationItem'
 import img from '../../img/girlAvatar.jpg'
+import { NavLink } from 'react-router-dom'
 
 class Dialogs extends Component {
     render() {
+        const dialogsName = this.props.dialogsName
+        const conversation = this.props.conversation
         return (
             <>
                 <section className="h-[calc(100vh-240px)] grid grid-cols-[2fr,_10fr] pt-[20px]">
@@ -15,7 +16,9 @@ class Dialogs extends Component {
                             {dialogsName.map((dialogName) => {
                                 return (
                                     <li className="pt-4" key={dialogName.id}>
-                                        {dialogName.name}
+                                        <NavLink to={`${dialogName.id}`}>
+                                            {dialogName.name}
+                                        </NavLink>
                                     </li>
                                 )
                             })}

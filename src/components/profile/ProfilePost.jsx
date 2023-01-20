@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import LikePost from './LikePost'
-import messages from '../../data/messages'
 
 class ProfilePost extends Component {
     render() {
+        const messages = this.props.messages
         return (
             <>
                 {messages.map((messages) => {

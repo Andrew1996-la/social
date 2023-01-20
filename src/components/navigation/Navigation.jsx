@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import navigationMenuLinks from '../../data/navigationMenuLinks'
 
 import { NavLink } from 'react-router-dom'
 
@@ -8,6 +7,8 @@ class Navigation extends Component {
         const activeStyle = {
             color: '#ECEBE5',
         }
+
+        const navigationMenuLinks = this.props.navigationMenuLinks
 
         return (
             <nav className="bg-darkGreen flex justify-center items-center h-[100%]">
