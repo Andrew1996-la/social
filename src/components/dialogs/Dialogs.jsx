@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import ConversationItem from './ConversationItem'
 import img from '../../img/girlAvatar.jpg'
 import { NavLink } from 'react-router-dom'
+import DialogsNameItem from './DialogsNameItem'
 
 class Dialogs extends Component {
     render() {
@@ -14,11 +15,10 @@ class Dialogs extends Component {
                         <ul className="text-s font-josefin text-lightGray">
                             {dialogsName.map((dialogName) => {
                                 return (
-                                    <li className="pt-4" key={dialogName.id}>
-                                        <NavLink to={`${dialogName.id}`}>
-                                            {dialogName.name}
-                                        </NavLink>
-                                    </li>
+                                    <DialogsNameItem
+                                        key={dialogName.id}
+                                        dialogName={dialogName}
+                                    />
                                 )
                             })}
                         </ul>
