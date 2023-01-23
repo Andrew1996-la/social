@@ -6,8 +6,7 @@ import { NavLink } from 'react-router-dom'
 
 class Dialogs extends Component {
     render() {
-        const dialogsName = this.props.dialogsName
-        const conversation = this.props.conversation
+        const { dialogsName, conversation } = this.props.dialogsState
         return (
             <>
                 <section className="h-[calc(100vh-240px)] grid grid-cols-[2fr,_10fr] pt-[20px]">

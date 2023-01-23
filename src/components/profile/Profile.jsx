@@ -7,7 +7,7 @@ import ProfilePost from './ProfilePost'
 
 class Profile extends Component {
     render() {
-        const messages = this.props.messages
+        const messages = this.props.messagesState
         return (
             <section className="grid grid-cols-[2fr,_10fr]">
                 <ProfileBG />

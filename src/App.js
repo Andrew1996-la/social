@@ -8,25 +8,27 @@ import { Routes, Route } from 'react-router-dom'
 import NoteFound from './components/notFound/noteFound'
 import Layout from './components/Layout/Layout'
 
-function App({ messages, dialogsName, conversation, navigationMenuLinks }) {
+function App({ state }) {
     return (
         <>
             <Routes>
                 <Route
                     path="/"
                     element={
-                        <Layout navigationMenuLinks={navigationMenuLinks} />
+                        <Layout
+                            navigationMenuLinks={
+                                state.navigationSection.navigationMenuLinks
+                            }
+                        />
                     }
                 >
-                    <Route index element={<Profile messages={messages} />} />
+                    <Route
+                        index
+                        element={<Profile messagesState={state.profilePage} />}
+                    />
                     <Route
                         path="message/*"
-                        element={
-                            <Dialogs
-                                dialogsName={dialogsName}
-                                conversation={conversation}
-                            />
-                        }
+                        element={<Dialogs dialogsState={state.messagePage} />}
                     />
                     <Route path="new" element={<New />} />
                     <Route path="music" element={<Music />} />
