@@ -15,16 +15,12 @@ function App({ state }) {
                 <Route
                     path="/"
                     element={
-                        <Layout
-                            navigationMenuLinks={
-                                state.navigationSection.navigationMenuLinks
-                            }
-                        />
+                        <Layout navigationState={state.navigationSection} />
                     }
                 >
                     <Route
                         index
-                        element={<Profile messagesState={state.profilePage} />}
+                        element={<Profile profileState={state.profilePage} />}
                     />
                     <Route
                         path="message/*"

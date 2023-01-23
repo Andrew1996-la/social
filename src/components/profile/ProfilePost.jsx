@@ -3,19 +3,19 @@ import LikePost from './LikePost'
 
 class ProfilePost extends Component {
     render() {
-        const messages = this.props.messages
+        const posts = this.props.posts
         return (
             <>
-                {messages.map((messages) => {
+                {posts.map((post) => {
                     return (
                         <div
                             className="col-span-2 w-[84%] px-2 mt-7 relative"
-                            key={messages.id}
+                            key={post.id}
                         >
                             <div className="font-josefin text-lightGray text-l font-light">
-                                {messages.message}
+                                {post.post}
                             </div>
-                            <LikePost count={messages.likes} />
+                            <LikePost count={post.likes} />
                         </div>
                     )
                 })}

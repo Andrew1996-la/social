@@ -1,24 +1,24 @@
 const state = {
     profilePage: {
-        messages: [
+        posts: [
             {
                 id: 1,
-                message: 'post 1 here',
+                post: 'post 1 here',
                 likes: 1,
             },
             {
                 id: 2,
-                message: 'it is post number 2',
+                post: 'it is post number 2',
                 likes: 43,
             },
             {
                 id: 3,
-                message: 'third post',
+                post: 'third post',
                 likes: 15,
             },
             {
                 id: 4,
-                message: 'and else one posts',
+                post: 'and else one posts',
                 likes: 6,
             },
         ],
@@ -80,6 +80,11 @@ const state = {
                 link: '/settings',
                 linkName: 'Settings',
             },
+        ],
+        friends: [
+            { id: 1, name: 'John' },
+            { id: 2, name: 'Peter' },
+            { id: 3, name: 'Katya' },
         ],
     },
 }
