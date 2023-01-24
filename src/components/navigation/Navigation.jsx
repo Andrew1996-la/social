@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import FriendItemNavBar from '../profile/FriendItemNavBar'
+import FriendItemNavBar from './FriendItemNavBar'
 
 class Navigation extends Component {
     render() {

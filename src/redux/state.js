@@ -89,4 +89,14 @@ const state = {
     },
 }
 
+export const addPost = (textPost) => {
+    const newPost = {
+        id: 6,
+        post: textPost,
+        likes: 0,
+    }
+
+    state.profilePage.posts.push(newPost)
+}
+
 export default state

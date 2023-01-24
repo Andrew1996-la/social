@@ -8,7 +8,7 @@ import { Routes, Route } from 'react-router-dom'
 import NoteFound from './components/notFound/noteFound'
 import Layout from './components/Layout/Layout'
 
-function App({ state }) {
+function App({ state, addPost }) {
     return (
         <>
             <Routes>
@@ -20,7 +20,12 @@ function App({ state }) {
                 >
                     <Route
                         index
-                        element={<Profile profileState={state.profilePage} />}
+                        element={
+                            <Profile
+                                profileState={state.profilePage}
+                                addPost={addPost}
+                            />
+                        }
                     />
                     <Route
                         path="message/*"
