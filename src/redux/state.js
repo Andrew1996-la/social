@@ -1,5 +1,8 @@
-import { renderThree } from '../render'
 import { generateId } from '../utils/utils'
+
+let renderThree = () => {
+    console.log('changed')
+}
 
 const state = {
     profilePage: {
@@ -124,6 +127,10 @@ export const sendMessage = () => {
 export const updateNewMessageText = (newMessageText) => {
     state.messagePage.newMessageText = newMessageText
     renderThree(state)
+}
+
+export const subscribe = (observer) => {
+    renderThree = observer
 }
 
 export default state
