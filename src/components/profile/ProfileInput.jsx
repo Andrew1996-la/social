@@ -1,10 +1,14 @@
 import React, { useRef } from 'react'
 
-function ProfileInput(props) {
+function ProfileInput({ addPost, newTextMessage, updateTextPost }) {
     const newPostText = useRef(null)
-    const addPost = () => {
-        const text = newPostText.current.value
-        props.addPost(text)
+
+    const handleAddPost = () => {
+        addPost()
+    }
+
+    const handleWriteMessage = () => {
+        updateTextPost(newPostText.current.value)
     }
 
     return (
@@ -14,10 +18,12 @@ function ProfileInput(props) {
                 className="w-[80%] font-josefin px-2 py-1 rounded-md h-[70px] resize-none"
                 placeholder="write your post here, my friend"
                 ref={newPostText}
-            ></textarea>
+                value={newTextMessage}
+                onChange={handleWriteMessage}
+            />
             <button
                 className="block py-3 px-6 bg-darkGreen text-lightGray rounded-md"
-                onClick={addPost}
+                onClick={handleAddPost}
             >
                 Send
             </button>

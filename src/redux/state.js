@@ -1,3 +1,6 @@
+import { renderThree } from '../render'
+import { generateId } from '../utils/utils'
+
 const state = {
     profilePage: {
         posts: [
@@ -22,6 +25,7 @@ const state = {
                 likes: 6,
             },
         ],
+        newPostText: '',
     },
     messagePage: {
         dialogsName: [
@@ -89,14 +93,21 @@ const state = {
     },
 }
 
-export const addPost = (textPost) => {
+export const addPost = () => {
     const newPost = {
-        id: 6,
-        post: textPost,
+        id: generateId(),
+        post: state.profilePage.newPostText,
         likes: 0,
     }
 
     state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText = ''
+    renderThree(state)
+}
+
+export const updateTextPost = (newTextPost) => {
+    state.profilePage.newPostText = newTextPost
+    renderThree(state)
 }
 
 export default state
