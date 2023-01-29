@@ -56,6 +56,7 @@ const state = {
                 message: 'Are you genius!!!',
             },
         ],
+        newMessageText: '',
     },
     navigationSection: {
         navigationMenuLinks: [
@@ -107,6 +108,21 @@ export const addPost = () => {
 
 export const updateTextPost = (newTextPost) => {
     state.profilePage.newPostText = newTextPost
+    renderThree(state)
+}
+
+export const sendMessage = () => {
+    const newMessage = {
+        id: generateId(),
+        message: state.messagePage.newMessageText,
+    }
+    state.messagePage.conversation.push(newMessage)
+    state.messagePage.newMessageText = ''
+    renderThree(state)
+}
+
+export const updateNewMessageText = (newMessageText) => {
+    state.messagePage.newMessageText = newMessageText
     renderThree(state)
 }
 

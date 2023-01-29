@@ -7,7 +7,11 @@ import DialogsInput from './DialogsInput'
 
 class Dialogs extends Component {
     render() {
-        const { dialogsName, conversation } = this.props.dialogsState
+        const { dialogsName, conversation, newMessageText } =
+            this.props.dialogsState
+        const sendMessage = this.props.sendMessage
+        const updateNewMessageText = this.props.updateNewMessageText
+
         return (
             <>
                 <section className="h-[calc(100vh-240px)] grid grid-rows-[10fr,_1fr] grid-cols-[2fr,_10fr] pt-[20px]">
@@ -36,7 +40,11 @@ class Dialogs extends Component {
                             })}
                         </ul>
                     </div>
-                    <DialogsInput />
+                    <DialogsInput
+                        sendMessage={sendMessage}
+                        newMessageText={newMessageText}
+                        updateNewMessageText={updateNewMessageText}
+                    />
                 </section>
             </>
         )

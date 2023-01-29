@@ -8,7 +8,13 @@ import { Routes, Route } from 'react-router-dom'
 import NoteFound from './components/notFound/noteFound'
 import Layout from './components/Layout/Layout'
 
-function App({ state, addPost, updateTextPost }) {
+function App({
+    state,
+    addPost,
+    updateTextPost,
+    sendMessage,
+    updateNewMessageText,
+}) {
     return (
         <>
             <Routes>
@@ -30,7 +36,13 @@ function App({ state, addPost, updateTextPost }) {
                     />
                     <Route
                         path="message/*"
-                        element={<Dialogs dialogsState={state.messagePage} />}
+                        element={
+                            <Dialogs
+                                dialogsState={state.messagePage}
+                                sendMessage={sendMessage}
+                                updateNewMessageText={updateNewMessageText}
+                            />
+                        }
                     />
                     <Route path="new" element={<New />} />
                     <Route path="music" element={<Music />} />

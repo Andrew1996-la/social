@@ -1,10 +1,15 @@
 import React, { useRef } from 'react'
 
-function DialogsInput() {
+function DialogsInput({ sendMessage, newMessageText, updateNewMessageText }) {
     const messageText = useRef(null)
 
     const addNewMessage = () => {
-        console.log(messageText.current.value)
+        sendMessage()
+    }
+
+    const handleUpdateNewMessageText = () => {
+        const newText = messageText.current.value
+        updateNewMessageText(newText)
     }
 
     return (
@@ -13,6 +18,8 @@ function DialogsInput() {
                 type="text"
                 className="w-[80%] p-4 h-10 rounded-md font-josefin "
                 ref={messageText}
+                value={newMessageText}
+                onChange={handleUpdateNewMessageText}
             />
             <button
                 className="h-10 w-20 align-middle rounded-md text-lightGray bg-darkGreen ml-2.5"
