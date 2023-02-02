@@ -1,15 +1,15 @@
 import React, { useRef } from 'react'
 
-function DialogsInput({ sendMessage, newMessageText, updateNewMessageText }) {
+function DialogsInput({ dispatch, newMessageText }) {
     const messageText = useRef(null)
 
     const addNewMessage = () => {
-        sendMessage()
+        dispatch({ type: 'SEND_MESSAGE' })
     }
 
     const handleUpdateNewMessageText = () => {
         const newText = messageText.current.value
-        updateNewMessageText(newText)
+        dispatch({ type: 'UPDATE_NEW_MESSAGE_TEXT', newMessageText: newText })
     }
 
     return (

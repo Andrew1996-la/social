@@ -25,10 +25,7 @@ function App({ store }) {
                         element={
                             <Profile
                                 profileState={store.getState().profilePage}
-                                addPost={store.addPost.bind(store)}
-                                updateTextPost={store.updateTextPost.bind(
-                                    store
-                                )}
+                                dispatch={store.dispatch.bind(store)}
                             />
                         }
                     />
@@ -37,10 +34,7 @@ function App({ store }) {
                         element={
                             <Dialogs
                                 dialogsState={store.getState().messagePage}
-                                sendMessage={store.sendMessage.bind(store)}
-                                updateNewMessageText={store.updateNewMessageText.bind(
-                                    store
-                                )}
+                                dispatch={store.dispatch.bind(store)}
                             />
                         }
                     />

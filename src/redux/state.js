@@ -102,39 +102,36 @@ const store = {
         console.log('changed')
     },
 
-    addPost() {
-        const newPost = {
-            id: generateId(),
-            post: this._state.profilePage.newPostText,
-            likes: 0,
-        }
-
-        this._state.profilePage.posts.push(newPost)
-        this._state.profilePage.newPostText = ''
-        this._subscribeObserver(this._state)
-    },
-    updateTextPost(newTextPost) {
-        this._state.profilePage.newPostText = newTextPost
-        this._subscribeObserver(this._state)
-    },
-
-    sendMessage() {
-        const newMessage = {
-            id: generateId(),
-            message: this._state.messagePage.newMessageText,
-        }
-        this._state.messagePage.conversation.push(newMessage)
-        this._state.messagePage.newMessageText = ''
-        this._subscribeObserver(this._state)
-    },
-
-    updateNewMessageText(newMessageText) {
-        this._state.messagePage.newMessageText = newMessageText
-        this._subscribeObserver(this._state)
-    },
-
     subscribe(observer) {
         this._subscribeObserver = observer
+    },
+
+    dispatch(action) {
+        if (action.type === 'ADD_POST') {
+            const newPost = {
+                id: generateId(),
+                post: this._state.profilePage.newPostText,
+                likes: 0,
+            }
+
+            this._state.profilePage.posts.push(newPost)
+            this._state.profilePage.newPostText = ''
+            this._subscribeObserver(this._state)
+        } else if (action.type === 'UPDATE_TEXT_POST') {
+            this._state.profilePage.newPostText = action.newTextPost
+            this._subscribeObserver(this._state)
+        } else if (action.type === 'SEND_MESSAGE') {
+            const newMessage = {
+                id: generateId(),
+                message: this._state.messagePage.newMessageText,
+            }
+            this._state.messagePage.conversation.push(newMessage)
+            this._state.messagePage.newMessageText = ''
+            this._subscribeObserver(this._state)
+        } else if (action.type === 'UPDATE_NEW_MESSAGE_TEXT') {
+            this._state.messagePage.newMessageText = action.newMessageText
+            this._subscribeObserver(this._state)
+        }
     },
 }
 

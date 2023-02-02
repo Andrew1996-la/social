@@ -9,8 +9,7 @@ class Dialogs extends Component {
     render() {
         const { dialogsName, conversation, newMessageText } =
             this.props.dialogsState
-        const sendMessage = this.props.sendMessage
-        const updateNewMessageText = this.props.updateNewMessageText
+        const dispatch = this.props.dispatch
 
         return (
             <>
@@ -41,9 +40,8 @@ class Dialogs extends Component {
                         </ul>
                     </div>
                     <DialogsInput
-                        sendMessage={sendMessage}
+                        dispatch={dispatch}
                         newMessageText={newMessageText}
-                        updateNewMessageText={updateNewMessageText}
                     />
                 </section>
             </>

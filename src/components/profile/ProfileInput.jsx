@@ -1,14 +1,17 @@
 import React, { useRef } from 'react'
 
-function ProfileInput({ addPost, newTextMessage, updateTextPost }) {
+function ProfileInput({ dispatch, newTextMessage }) {
     const newPostText = useRef(null)
 
     const handleAddPost = () => {
-        addPost()
+        dispatch({ type: 'ADD_POST' })
     }
 
     const handleWriteMessage = () => {
-        updateTextPost(newPostText.current.value)
+        dispatch({
+            type: 'UPDATE_TEXT_POST',
+            newTextPost: newPostText.current.value,
+        })
     }
 
     return (
