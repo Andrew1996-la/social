@@ -8,29 +8,27 @@ import { Routes, Route } from 'react-router-dom'
 import NoteFound from './components/notFound/noteFound'
 import Layout from './components/Layout/Layout'
 
-function App({
-    state,
-    addPost,
-    updateTextPost,
-    sendMessage,
-    updateNewMessageText,
-}) {
+function App({ store }) {
     return (
         <>
             <Routes>
                 <Route
                     path="/"
                     element={
-                        <Layout navigationState={state.navigationSection} />
+                        <Layout
+                            navigationState={store.getState().navigationSection}
+                        />
                     }
                 >
                     <Route
                         index
                         element={
                             <Profile
-                                profileState={state.profilePage}
-                                addPost={addPost}
-                                updateTextPost={updateTextPost}
+                                profileState={store.getState().profilePage}
+                                addPost={store.addPost.bind(store)}
+                                updateTextPost={store.updateTextPost.bind(
+                                    store
+                                )}
                             />
                         }
                     />
@@ -38,9 +36,11 @@ function App({
                         path="message/*"
                         element={
                             <Dialogs
-                                dialogsState={state.messagePage}
-                                sendMessage={sendMessage}
-                                updateNewMessageText={updateNewMessageText}
+                                dialogsState={store.getState().messagePage}
+                                sendMessage={store.sendMessage.bind(store)}
+                                updateNewMessageText={store.updateNewMessageText.bind(
+                                    store
+                                )}
                             />
                         }
                     />

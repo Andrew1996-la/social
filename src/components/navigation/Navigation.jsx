@@ -8,7 +8,6 @@ class Navigation extends Component {
         const activeStyle = {
             color: '#ECEBE5',
         }
-
         const { navigationMenuLinks, friends } = this.props.navigationState
         return (
             <div className="bg-darkGreen h-[100%]">
