@@ -1,17 +1,18 @@
 import React, { useRef } from 'react'
+import {
+    addPostActionCreator,
+    updateTextPostActionCreator,
+} from '../../redux/state'
 
 function ProfileInput({ dispatch, newTextMessage }) {
     const newPostText = useRef(null)
 
     const handleAddPost = () => {
-        dispatch({ type: 'ADD_POST' })
+        dispatch(addPostActionCreator())
     }
 
     const handleWriteMessage = () => {
-        dispatch({
-            type: 'UPDATE_TEXT_POST',
-            newTextPost: newPostText.current.value,
-        })
+        dispatch(updateTextPostActionCreator(newPostText.current.value))
     }
 
     return (

@@ -1,5 +1,10 @@
 import { generateId } from '../utils/utils'
 
+const actionTypes = {
+    ADD_POST: 'ADD_POST',
+    UPDATE_TEXT_POST: 'UPDATE_TEXT_POST',
+}
+
 const store = {
     _state: {
         profilePage: {
@@ -133,6 +138,19 @@ const store = {
             this._subscribeObserver(this._state)
         }
     },
+}
+
+export const addPostActionCreator = () => {
+    return {
+        type: actionTypes.ADD_POST,
+    }
+}
+
+export const updateTextPostActionCreator = (text) => {
+    return {
+        type: actionTypes.UPDATE_TEXT_POST,
+        newTextPost: text,
+    }
 }
 
 export default store
