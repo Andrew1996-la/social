@@ -1,15 +1,19 @@
 import React, { useRef } from 'react'
+import {
+    sendMessageActionCreator,
+    updateNewMessageTextActionCreator,
+} from '../../redux/dialogReducer'
 
 function DialogsInput({ dispatch, newMessageText }) {
     const messageText = useRef(null)
 
     const addNewMessage = () => {
-        dispatch({ type: 'SEND_MESSAGE' })
+        dispatch(sendMessageActionCreator())
     }
 
     const handleUpdateNewMessageText = () => {
         const newText = messageText.current.value
-        dispatch({ type: 'UPDATE_NEW_MESSAGE_TEXT', newMessageText: newText })
+        dispatch(updateNewMessageTextActionCreator(newText))
     }
 
     return (

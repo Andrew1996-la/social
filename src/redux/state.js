@@ -1,9 +1,6 @@
-import { generateId } from '../utils/utils'
-
-const actionTypes = {
-    ADD_POST: 'ADD_POST',
-    UPDATE_TEXT_POST: 'UPDATE_TEXT_POST',
-}
+import profileReducer from './profileReducer'
+import dialogReducer from './dialogReducer'
+import navigationReducer from './navigationReducer'
 
 const store = {
     _state: {
@@ -112,45 +109,11 @@ const store = {
     },
 
     dispatch(action) {
-        if (action.type === 'ADD_POST') {
-            const newPost = {
-                id: generateId(),
-                post: this._state.profilePage.newPostText,
-                likes: 0,
-            }
-
-            this._state.profilePage.posts.push(newPost)
-            this._state.profilePage.newPostText = ''
-            this._subscribeObserver(this._state)
-        } else if (action.type === 'UPDATE_TEXT_POST') {
-            this._state.profilePage.newPostText = action.newTextPost
-            this._subscribeObserver(this._state)
-        } else if (action.type === 'SEND_MESSAGE') {
-            const newMessage = {
-                id: generateId(),
-                message: this._state.messagePage.newMessageText,
-            }
-            this._state.messagePage.conversation.push(newMessage)
-            this._state.messagePage.newMessageText = ''
-            this._subscribeObserver(this._state)
-        } else if (action.type === 'UPDATE_NEW_MESSAGE_TEXT') {
-            this._state.messagePage.newMessageText = action.newMessageText
-            this._subscribeObserver(this._state)
-        }
+        profileReducer(this._state.profilePage, action)
+        dialogReducer(this._state.messagePage, action)
+        navigationReducer(this._state.navigationSection, action)
+        this._subscribeObserver(this._state)
     },
-}
-
-export const addPostActionCreator = () => {
-    return {
-        type: actionTypes.ADD_POST,
-    }
-}
-
-export const updateTextPostActionCreator = (text) => {
-    return {
-        type: actionTypes.UPDATE_TEXT_POST,
-        newTextPost: text,
-    }
 }
 
 export default store

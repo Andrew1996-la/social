@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import {
     addPostActionCreator,
     updateTextPostActionCreator,
-} from '../../redux/state'
+} from '../../redux/profileReducer'
 
 function ProfileInput({ dispatch, newTextMessage }) {
     const newPostText = useRef(null)
