@@ -7,6 +7,7 @@ import Settings from './components/settings/settings'
 import { Routes, Route } from 'react-router-dom'
 import NoteFound from './components/notFound/noteFound'
 import Layout from './components/Layout/Layout'
+import ProfileContainer from './components/profile/ProfileContainer'
 
 function App({ store }) {
     return (
@@ -20,15 +21,7 @@ function App({ store }) {
                         />
                     }
                 >
-                    <Route
-                        index
-                        element={
-                            <Profile
-                                profileState={store.getState().profilePage}
-                                dispatch={store.dispatch.bind(store)}
-                            />
-                        }
-                    />
+                    <Route index element={<ProfileContainer store={store} />} />
                     <Route
                         path="message/*"
                         element={

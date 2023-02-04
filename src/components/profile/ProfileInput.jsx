@@ -1,18 +1,14 @@
 import React, { useRef } from 'react'
-import {
-    addPostActionCreator,
-    updateTextPostActionCreator,
-} from '../../redux/profileReducer'
 
-function ProfileInput({ dispatch, newTextMessage }) {
+function ProfileInput({ addPost, updateText, newTextMessage }) {
     const newPostText = useRef(null)
 
     const handleAddPost = () => {
-        dispatch(addPostActionCreator())
+        addPost()
     }
 
     const handleWriteMessage = () => {
-        dispatch(updateTextPostActionCreator(newPostText.current.value))
+        updateText(newPostText.current.value)
     }
 
     return (
