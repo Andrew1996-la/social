@@ -8,23 +8,13 @@ import Layout from './components/Layout/Layout'
 import ProfileContainer from './components/profile/ProfileContainer'
 import DialogContainer from './components/dialogs/DialogContainer'
 
-function App({ store }) {
+function App() {
     return (
         <>
             <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <Layout
-                            navigationState={store.getState().navigationSection}
-                        />
-                    }
-                >
-                    <Route index element={<ProfileContainer store={store} />} />
-                    <Route
-                        path="message/*"
-                        element={<DialogContainer store={store} />}
-                    />
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<ProfileContainer />} />
+                    <Route path="message/*" element={<DialogContainer />} />
                     <Route path="new" element={<New />} />
                     <Route path="music" element={<Music />} />
                     <Route path="settings" element={<Settings />} />
