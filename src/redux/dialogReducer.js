@@ -42,15 +42,13 @@ const dialogReducer = (state = initialState, action) => {
                 id: generateId(),
                 message: state.newMessageText,
             }
-            const stateCopy = JSON.parse(JSON.stringify(state))
-
-            stateCopy.conversation.push(newMessage)
-            stateCopy.newMessageText = ''
-            return stateCopy
+            return {
+                ...state,
+                newMessageText: '',
+                conversation: [...state.conversation, newMessage],
+            }
         case UPDATE_NEW_MESSAGE_TEXT: {
-            const stateCopy = JSON.parse(JSON.stringify(state))
-            stateCopy.newMessageText = action.newMessageText
-            return stateCopy
+            return { ...state, newMessageText: action.newMessageText }
         }
         default:
             return state
