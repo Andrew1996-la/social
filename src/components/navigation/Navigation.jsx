@@ -34,7 +34,7 @@ function Navigation(props) {
             </nav>
             <div className="mt-[350px]">
                 <h3 className="text-l text-center text-mainGreen font-aboreto">
-                    Friends
+                    Best Friends
                 </h3>
                 <div className="flex flex-wrap justify-around w-[200px] mt-4 mx-auto">
                     {friends.map((friend) => {
