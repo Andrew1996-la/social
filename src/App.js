@@ -7,6 +7,7 @@ import NoteFound from './components/notFound/noteFound'
 import Layout from './components/Layout/Layout'
 import ProfileContainer from './components/profile/ProfileContainer'
 import DialogContainer from './components/dialogs/DialogContainer'
+import FriendsContainer from './components/friends/FriendsContainer'
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/" element={<Layout />}>
                     <Route index element={<ProfileContainer />} />
                     <Route path="message/*" element={<DialogContainer />} />
+                    <Route path="friends" element={<FriendsContainer />} />
                     <Route path="new" element={<New />} />
                     <Route path="music" element={<Music />} />
                     <Route path="settings" element={<Settings />} />

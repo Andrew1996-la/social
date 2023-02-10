@@ -8,7 +8,7 @@ function FriendItemNavBar(props) {
                 <img
                     className="rounded-full w-[100%] h-[100%] object-cover"
                     src={img}
-                    alt=""
+                    alt="mini photo"
                 />
             </div>
             <div className="text-[14px] text-center text-mainGreen font-aboreto">

@@ -12,16 +12,21 @@ const initialState = {
         },
         {
             id: 2,
+            link: '/friends',
+            linkName: 'Friends',
+        },
+        {
+            id: 3,
             link: '/new',
             linkName: 'New',
         },
         {
-            id: 3,
+            id: 4,
             link: '/music',
             linkName: 'Music',
         },
         {
-            id: 4,
+            id: 5,
             link: '/settings',
             linkName: 'Settings',
         },
