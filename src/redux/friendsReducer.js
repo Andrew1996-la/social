@@ -12,14 +12,14 @@ const initialState = {
             location: { country: 'USA', city: 'Springfield' },
         },
         {
-            id: 1,
+            id: 2,
             followed: false,
             name: 'Bart',
             status: 'I hate school',
             location: { country: 'USA', city: 'Springfield' },
         },
         {
-            id: 1,
+            id: 3,
             followed: false,
             name: 'Maggie',
             status: 'Hi i am Maggie',

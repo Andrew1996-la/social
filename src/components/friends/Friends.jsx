@@ -1,9 +1,18 @@
 import FriendsItem from './FriendsItem'
 
-function Friends(props) {
+function Friends({ friends, follow, unfollow }) {
     return (
         <>
-            <FriendsItem />
+            {friends.map((friend) => {
+                return (
+                    <FriendsItem
+                        key={friend.id}
+                        aboutFriend={friend}
+                        follow={follow}
+                        unfollow={unfollow}
+                    />
+                )
+            })}
         </>
     )
 }
