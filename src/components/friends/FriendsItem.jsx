@@ -1,7 +1,7 @@
 import iconAvatar from '../../img/icon-avatar.png'
 
 function FriendsItem({
-    aboutFriend: { id, name, status, location, followed },
+    aboutFriend: { id, name, status, location, followed, photos },
     follow,
     unfollow,
 }) {
@@ -17,11 +17,15 @@ function FriendsItem({
         followed ? onUnfollow() : onFollow()
     }
 
+    const setUserPhoto = () => {
+        return photos.small !== null ? photos.small : iconAvatar
+    }
+
     return (
         <section className="grid grid-cols-[20%,_80%] grid-rows-80px] mt-6 mx-6 gap-3">
             <div className="grid gird-row-[100%] gap-3">
                 <div className="justify-self-center w-[50%] h-[50%]">
-                    <img src={iconAvatar} alt="avatar" />
+                    <img src={setUserPhoto()} alt="avatar" />
                 </div>
                 <button
                     className="bg-lightGray font-aboreto"
@@ -41,10 +45,10 @@ function FriendsItem({
                 </div>
                 <div className="justify-self-end mr-9">
                     <div className="text-l font-aboreto">
-                        Country: {location.country}
+                        Country: {'location.country'}
                     </div>
                     <div className="text-l font-aboreto">
-                        City: {location.city}
+                        City: {'location.city'}
                     </div>
                 </div>
             </div>

@@ -3,29 +3,7 @@ const UNFOLLOW = 'UNFOLLOW'
 const SET_FRIENDS = 'SET_FRIENDS'
 
 const initialState = {
-    friends: [
-        // {
-        //     id: 1,
-        //     followed: true,
-        //     name: 'Homer',
-        //     status: 'I like TV',
-        //     location: { country: 'USA', city: 'Springfield' },
-        // },
-        // {
-        //     id: 2,
-        //     followed: false,
-        //     name: 'Bart',
-        //     status: 'I hate school',
-        //     location: { country: 'USA', city: 'Springfield' },
-        // },
-        // {
-        //     id: 3,
-        //     followed: false,
-        //     name: 'Maggie',
-        //     status: 'Hi i am Maggie',
-        //     location: { country: 'USA', city: 'NewYork' },
-        // },
-    ],
+    friends: [],
 }
 
 const friendsReducer = (state = initialState, action) => {
