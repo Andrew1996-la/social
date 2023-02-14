@@ -2,6 +2,7 @@ import Friends from './Friends'
 import { connect } from 'react-redux'
 import {
     followActionCreator,
+    setFriendsActionCreator,
     unfollowActionCreator,
 } from '../../redux/friendsReducer'
 
@@ -18,6 +19,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         unfollow: (friendsId) => {
             dispatch(unfollowActionCreator(friendsId))
+        },
+        setFriends: (friends) => {
+            dispatch(setFriendsActionCreator(friends))
         },
     }
 }
